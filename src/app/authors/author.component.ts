@@ -24,7 +24,7 @@ export class AuthorComponent implements OnInit {
     this.isDataLoaded = false;
     let authorId = this.activatedRoute.snapshot.params['id'];
     this.authorsService
-      .get(authorId).subscribe(author => {
+      .get(authorId, { include: ['books']}).subscribe(author => {
       this.author = author;
     }, null, () => {
       this.isDataLoaded = true;
