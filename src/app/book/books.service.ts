@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Author} from '../authors/authors.service';
+import {Author, AuthorsService} from '../authors/authors.service';
 import {Autoregister, DocumentResource, Resource, Service} from 'ngx-jsonapi';
 
 export class Book extends Resource {

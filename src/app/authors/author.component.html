@@ -1,8 +1,11 @@
 <div>
-  <span *ngIf="author" class="author_name">  name: {{ author.attributes.name }}</span> <br />
-  <h2>Books</h2>
-  <div class="book" *ngFor="let book of author.relationships.books.data">
-    id: {{ book.id }} <br />
-    <span class="book_title">  name: {{ book.attributes.title }} </span><br />
+  <span *ngIf="author" class="author_name">  name: {{ author.attributes.name }}</span> <br/>
+  <div *ngIf=" author.relationships.books.data.length">
+    <h2>Books</h2>
+    <div class="book" *ngFor="let book of author.relationships.books.data">
+      id: {{ book.id }} <br/>
+      <span class="book_title">  name: <a routerLink="/book/{{ book.id }}"
+                                          routerLinkActive="active">{{ book.attributes.title}}</a> </span><br/>
+    </div>
   </div>
 </div>

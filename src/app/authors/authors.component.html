@@ -2,6 +2,7 @@
 
 <div class="author" *ngFor="let author of authors.data">
   id: {{ author.id }} <br />
+  <a routerLink="/author/{{ author.id }}" routerLinkActive="active">{{ author.id}}</a>
   <span class="author_name">  name: {{ author.attributes.name }} </span><br />
-    birth date: {{ author.attributes.date_of_birth | date }}
+    birth date: {{ author.attributes.date_of_birth | date }}<br/>
 </div>
