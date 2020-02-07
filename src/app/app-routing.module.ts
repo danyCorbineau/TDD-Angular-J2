@@ -10,7 +10,7 @@ import { NgxJsonapiModule } from 'ngx-jsonapi';
 const routes: Routes = [
   {path: '', component: AuthorsComponent},
   {
-    path: 'authors/:id',
+    path: 'author/:id',
     component: AuthorComponent
   }
 ];

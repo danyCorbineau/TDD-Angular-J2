@@ -13,26 +13,21 @@ export class AuthorsComponent implements OnInit {
   public authors: DocumentCollection<Author>;
   public isDataLoaded: boolean;
   public constructor(private authorsService: AuthorsService) {
-        
+
     }
 
-    
-  ngOnInit() {
-    
-      this.isDataLoaded = false;
-    let data = this.authorsService
-    .all({
-        // include: ['books', 'photos'],
-    });
 
-    data.subscribe(authors => {
-      
+  ngOnInit() {
+    this.isDataLoaded = false;
+    this.authorsService
+    .all({
+        include: ['books'],
+    }).subscribe(authors => {
+
       this.authors = authors;
-      
+
     }, null, () => {
       this.isDataLoaded = true;
-     
-      
-    })
+    });
   }
 }
